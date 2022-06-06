@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace QLKS
 
             rib_QUANLY.Visible = true;
             rib_LAPPHIEU.Visible = true;
+            rib_BAOCAO.Visible = true;
+            rib_KhoiPhuc.Visible = true;
         }
         //kiem tra form da ton tai hay chua ?
         private Form CheckExists(Type ftype)
@@ -237,6 +240,71 @@ namespace QLKS
                 phong.MdiParent = this;
                 phong.Show();
             }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = CheckExists(typeof(frmReportDoanhThu));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmReportDoanhThu phong = new frmReportDoanhThu();
+                //phong.MdiParent = this;
+                phong.Show();
+            }
+        }
+
+        private void btnSaoLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //con is the connection string
+            if (MessageBox.Show("Xác nhận sao lưu phần mềm?", "Thông báo",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                string aaa = @"Data Source=" + "ASROMANCER" + ";Integrated Security=True;Initial Catalog=" + "QLKS" + "";
+                SqlConnection con = new SqlConnection(aaa);
+                con.Open();
+                string str = "USE QLKS;";
+                string str1 = "BACKUP DATABASE QLKS TO DISK = 'D:\\backupQLKS.Bak' WITH FORMAT,MEDIANAME = 'Z_SQLServerBackups',NAME = 'Full Backup of QLKS';";
+                SqlCommand cmd1 = new SqlCommand(str, con);
+                SqlCommand cmd2 = new SqlCommand(str1, con);
+                cmd1.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
+                MessageBox.Show("Backup thành công, file backup được lưu tại địa chỉ: D:\\backupQLKS.Bak !", "Thông báo", MessageBoxButtons.OK);
+                con.Close();
+            }           
+        }
+
+        private void btnKhoiPhuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //con is the connection string
+            if (MessageBox.Show("Xác nhận sao lưu phần mềm?", "Thông báo",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                string aaa = @"Data Source=" + "ASROMANCER" + ";Integrated Security=True;Initial Catalog=" + "QLKS" + "";
+                SqlConnection con = new SqlConnection(aaa);
+                con.Open();
+                string str = "USE master;";
+                string str1 = "ALTER DATABASE " + "QLKS" + " SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
+                string str3 = "RESTORE DATABASE " + "QLKS" + " FROM DISK = 'D:\\backupQLKS.Bak' WITH REPLACE ";
+                SqlCommand cmd = new SqlCommand(str, con);
+                SqlCommand cmd1 = new SqlCommand(str1, con);
+                SqlCommand cmd3 = new SqlCommand(str3, con);
+                cmd.ExecuteNonQuery();
+                cmd1.ExecuteNonQuery();
+                cmd3.ExecuteNonQuery();
+                MessageBox.Show("Restore thành công, ứng dụng sẽ khởi động lại! ", "Thông báo", MessageBoxButtons.OK);
+                con.Close();
+                Application.Restart();
+                this.Hide();
+            }
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

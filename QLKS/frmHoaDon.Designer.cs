@@ -62,6 +62,7 @@ namespace QLKS
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAYTAO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelInput = new DevExpress.XtraEditors.PanelControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.btnXuatCTHoaDon = new System.Windows.Forms.Button();
             this.btnChonPT = new System.Windows.Forms.Button();
@@ -95,7 +96,7 @@ namespace QLKS
             mAHDLabel.AutoSize = true;
             mAHDLabel.Location = new System.Drawing.Point(96, 43);
             mAHDLabel.Name = "mAHDLabel";
-            mAHDLabel.Size = new System.Drawing.Size(50, 17);
+            mAHDLabel.Size = new System.Drawing.Size(40, 13);
             mAHDLabel.TabIndex = 0;
             mAHDLabel.Text = "MAHD:";
             // 
@@ -104,7 +105,7 @@ namespace QLKS
             gHICHULabel.AutoSize = true;
             gHICHULabel.Location = new System.Drawing.Point(84, 110);
             gHICHULabel.Name = "gHICHULabel";
-            gHICHULabel.Size = new System.Drawing.Size(62, 17);
+            gHICHULabel.Size = new System.Drawing.Size(50, 13);
             gHICHULabel.TabIndex = 2;
             gHICHULabel.Text = "GHICHU:";
             // 
@@ -113,7 +114,7 @@ namespace QLKS
             mAPTLabel.AutoSize = true;
             mAPTLabel.Location = new System.Drawing.Point(374, 179);
             mAPTLabel.Name = "mAPTLabel";
-            mAPTLabel.Size = new System.Drawing.Size(47, 17);
+            mAPTLabel.Size = new System.Drawing.Size(38, 13);
             mAPTLabel.TabIndex = 4;
             mAPTLabel.Text = "MAPT:";
             // 
@@ -122,7 +123,7 @@ namespace QLKS
             mANVLabel.AutoSize = true;
             mANVLabel.Location = new System.Drawing.Point(373, 110);
             mANVLabel.Name = "mANVLabel";
-            mANVLabel.Size = new System.Drawing.Size(48, 17);
+            mANVLabel.Size = new System.Drawing.Size(39, 13);
             mANVLabel.TabIndex = 6;
             mANVLabel.Text = "MANV:";
             // 
@@ -131,7 +132,7 @@ namespace QLKS
             nGAYTAOLabel.AutoSize = true;
             nGAYTAOLabel.Location = new System.Drawing.Point(348, 43);
             nGAYTAOLabel.Name = "nGAYTAOLabel";
-            nGAYTAOLabel.Size = new System.Drawing.Size(73, 17);
+            nGAYTAOLabel.Size = new System.Drawing.Size(59, 13);
             nGAYTAOLabel.TabIndex = 8;
             nGAYTAOLabel.Text = "NGAYTAO:";
             // 
@@ -236,7 +237,7 @@ namespace QLKS
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1376, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1376, 24);
             // 
             // barDockControlBottom
             // 
@@ -250,17 +251,17 @@ namespace QLKS
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 640);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 646);
             // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl1.Location = new System.Drawing.Point(1376, 30);
+            this.barDockControl1.Location = new System.Drawing.Point(1376, 24);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(0, 640);
+            this.barDockControl1.Size = new System.Drawing.Size(0, 646);
             // 
             // DS
             // 
@@ -302,7 +303,7 @@ namespace QLKS
             // 
             this.gcHD.DataSource = this.bdsHD;
             this.gcHD.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcHD.Location = new System.Drawing.Point(0, 30);
+            this.gcHD.Location = new System.Drawing.Point(0, 24);
             this.gcHD.MainView = this.gridView1;
             this.gcHD.MenuManager = this.barManager1;
             this.gcHD.Name = "gcHD";
@@ -379,6 +380,7 @@ namespace QLKS
             // 
             // panelInput
             // 
+            this.panelInput.Controls.Add(this.button1);
             this.panelInput.Controls.Add(this.separatorControl1);
             this.panelInput.Controls.Add(this.btnXuatCTHoaDon);
             this.panelInput.Controls.Add(this.btnChonPT);
@@ -393,10 +395,21 @@ namespace QLKS
             this.panelInput.Controls.Add(mAHDLabel);
             this.panelInput.Controls.Add(this.txtMaHD);
             this.panelInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelInput.Location = new System.Drawing.Point(0, 259);
+            this.panelInput.Location = new System.Drawing.Point(0, 253);
             this.panelInput.Name = "panelInput";
-            this.panelInput.Size = new System.Drawing.Size(1376, 411);
+            this.panelInput.Size = new System.Drawing.Size(1376, 417);
             this.panelInput.TabIndex = 6;
+            this.panelInput.Paint += new System.Windows.Forms.PaintEventHandler(this.panelInput_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(802, 110);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(161, 41);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Xuất hóa đơn";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // separatorControl1
             // 
@@ -438,7 +451,7 @@ namespace QLKS
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtNgayTao.Properties.Mask.EditMask = "g";
             this.txtNgayTao.Properties.ReadOnly = true;
-            this.txtNgayTao.Size = new System.Drawing.Size(185, 24);
+            this.txtNgayTao.Size = new System.Drawing.Size(185, 20);
             this.txtNgayTao.TabIndex = 9;
             // 
             // txtMaNV
@@ -447,7 +460,7 @@ namespace QLKS
             this.txtMaNV.Location = new System.Drawing.Point(427, 107);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.ReadOnly = true;
-            this.txtMaNV.Size = new System.Drawing.Size(100, 23);
+            this.txtMaNV.Size = new System.Drawing.Size(100, 21);
             this.txtMaNV.TabIndex = 7;
             // 
             // txtMaPT
@@ -456,7 +469,7 @@ namespace QLKS
             this.txtMaPT.Location = new System.Drawing.Point(427, 176);
             this.txtMaPT.Name = "txtMaPT";
             this.txtMaPT.ReadOnly = true;
-            this.txtMaPT.Size = new System.Drawing.Size(100, 23);
+            this.txtMaPT.Size = new System.Drawing.Size(100, 21);
             this.txtMaPT.TabIndex = 5;
             // 
             // txtGhiChu
@@ -465,7 +478,7 @@ namespace QLKS
             this.txtGhiChu.Location = new System.Drawing.Point(152, 107);
             this.txtGhiChu.MenuManager = this.barManager1;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(125, 22);
+            this.txtGhiChu.Size = new System.Drawing.Size(125, 20);
             this.txtGhiChu.TabIndex = 3;
             // 
             // txtMaHD
@@ -474,7 +487,7 @@ namespace QLKS
             this.txtMaHD.Enabled = false;
             this.txtMaHD.Location = new System.Drawing.Point(152, 40);
             this.txtMaHD.Name = "txtMaHD";
-            this.txtMaHD.Size = new System.Drawing.Size(125, 23);
+            this.txtMaHD.Size = new System.Drawing.Size(125, 21);
             this.txtMaHD.TabIndex = 1;
             // 
             // bdsPT
@@ -488,7 +501,7 @@ namespace QLKS
             // 
             // frmHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1376, 670);
             this.Controls.Add(this.panelInput);
@@ -557,5 +570,6 @@ namespace QLKS
         private System.Windows.Forms.Button btnChonPT;
         private System.Windows.Forms.Button btnXuatCTHoaDon;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
+        private System.Windows.Forms.Button button1;
     }
 }
