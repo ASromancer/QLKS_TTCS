@@ -22,6 +22,7 @@ namespace QLKS
             rib_LAPPHIEU.Visible = true;
             rib_BAOCAO.Visible = true;
             rib_KhoiPhuc.Visible = true;
+            rib_PhanQuyen.Visible = true;
         }
         //kiem tra form da ton tai hay chua ?
         private Form CheckExists(Type ftype)
@@ -305,6 +306,21 @@ namespace QLKS
         private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThemVaiTro_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = CheckExists(typeof(frmThemVaiTro));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else 
+            {
+                frmThemVaiTro phong = new frmThemVaiTro();
+                //phong.MdiParent = this;
+                phong.Show();
+            }
         }
     }
 }

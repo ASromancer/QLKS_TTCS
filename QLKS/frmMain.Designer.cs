@@ -49,6 +49,9 @@ namespace QLKS
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnSaoLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnKhoiPhuc = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThemVaiTro = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSuaVaiTro = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoaVaiTro = new DevExpress.XtraBars.BarButtonItem();
             this.rib_QUANLY = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rib_LAPPHIEU = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -57,6 +60,8 @@ namespace QLKS
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rib_KhoiPhuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rib_PhanQuyen = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rib_HETHONG = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
@@ -93,16 +98,20 @@ namespace QLKS
             this.btnHD,
             this.barButtonItem2,
             this.btnSaoLuu,
-            this.btnKhoiPhuc});
+            this.btnKhoiPhuc,
+            this.btnThemVaiTro,
+            this.btnSuaVaiTro,
+            this.btnXoaVaiTro});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbonControl1.MaxItemId = 18;
+            this.ribbonControl1.MaxItemId = 21;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rib_QUANLY,
             this.rib_LAPPHIEU,
             this.rib_BAOCAO,
             this.rib_KhoiPhuc,
+            this.rib_PhanQuyen,
             this.rib_HETHONG});
             this.ribbonControl1.Size = new System.Drawing.Size(1376, 158);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
@@ -248,6 +257,7 @@ namespace QLKS
             this.barButtonItem2.Caption = "DOANH THU ";
             this.barButtonItem2.Id = 15;
             this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.LargeWidth = 80;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
@@ -256,6 +266,7 @@ namespace QLKS
             this.btnSaoLuu.Caption = "Sao Lưu";
             this.btnSaoLuu.Id = 16;
             this.btnSaoLuu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSaoLuu.ImageOptions.SvgImage")));
+            this.btnSaoLuu.LargeWidth = 80;
             this.btnSaoLuu.Name = "btnSaoLuu";
             this.btnSaoLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSaoLuu_ItemClick);
             // 
@@ -264,8 +275,34 @@ namespace QLKS
             this.btnKhoiPhuc.Caption = "Khôi Phục ";
             this.btnKhoiPhuc.Id = 17;
             this.btnKhoiPhuc.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnKhoiPhuc.ImageOptions.SvgImage")));
+            this.btnKhoiPhuc.LargeWidth = 80;
             this.btnKhoiPhuc.Name = "btnKhoiPhuc";
             this.btnKhoiPhuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhoiPhuc_ItemClick);
+            // 
+            // btnThemVaiTro
+            // 
+            this.btnThemVaiTro.Caption = "Thêm Vai Trò";
+            this.btnThemVaiTro.Id = 18;
+            this.btnThemVaiTro.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThemVaiTro.ImageOptions.SvgImage")));
+            this.btnThemVaiTro.LargeWidth = 80;
+            this.btnThemVaiTro.Name = "btnThemVaiTro";
+            this.btnThemVaiTro.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemVaiTro_ItemClick);
+            // 
+            // btnSuaVaiTro
+            // 
+            this.btnSuaVaiTro.Caption = "Sửa Vai Trò";
+            this.btnSuaVaiTro.Id = 19;
+            this.btnSuaVaiTro.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSuaVaiTro.ImageOptions.SvgImage")));
+            this.btnSuaVaiTro.LargeWidth = 80;
+            this.btnSuaVaiTro.Name = "btnSuaVaiTro";
+            // 
+            // btnXoaVaiTro
+            // 
+            this.btnXoaVaiTro.Caption = "Xóa Vai Trò";
+            this.btnXoaVaiTro.Id = 20;
+            this.btnXoaVaiTro.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoaVaiTro.ImageOptions.SvgImage")));
+            this.btnXoaVaiTro.LargeWidth = 80;
+            this.btnXoaVaiTro.Name = "btnXoaVaiTro";
             // 
             // rib_QUANLY
             // 
@@ -315,6 +352,7 @@ namespace QLKS
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "Báo Cáo";
             // 
             // rib_KhoiPhuc
             // 
@@ -329,6 +367,23 @@ namespace QLKS
             this.ribbonPageGroup5.ItemLinks.Add(this.btnSaoLuu);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnKhoiPhuc);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Khôi Phục Dữ Liệu";
+            // 
+            // rib_PhanQuyen
+            // 
+            this.rib_PhanQuyen.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup6});
+            this.rib_PhanQuyen.Name = "rib_PhanQuyen";
+            this.rib_PhanQuyen.Text = "PHÂN QUYỀN";
+            this.rib_PhanQuyen.Visible = false;
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnThemVaiTro);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnSuaVaiTro);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnXoaVaiTro);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Phân Quyền";
             // 
             // rib_HETHONG
             // 
@@ -456,6 +511,11 @@ namespace QLKS
         private DevExpress.XtraBars.BarButtonItem btnKhoiPhuc;
         private DevExpress.XtraBars.Ribbon.RibbonPage rib_KhoiPhuc;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rib_PhanQuyen;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btnThemVaiTro;
+        private DevExpress.XtraBars.BarButtonItem btnSuaVaiTro;
+        private DevExpress.XtraBars.BarButtonItem btnXoaVaiTro;
     }
 }
 
