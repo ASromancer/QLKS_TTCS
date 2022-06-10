@@ -123,4 +123,7 @@
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InNwX0RvYW5oVGh1Ij48RmllbGQgTmFtZT0iTUFQSE9ORyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJOR0FZR0lPREVOIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iTkdBWUdJT0RJIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iU09QSFVUVEhVRSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkdJQUhBTkdQSE9ORyIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJUT05HQ09ORyIgVHlwZT0iRG91YmxlIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
+  <metadata name="reportGenerator1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 60</value>
+  </metadata>
 </root>
